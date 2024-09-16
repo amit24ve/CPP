@@ -129,60 +129,59 @@
 //     return 0;
 // }
 
-#include<iostream>
-using namespace std;
-int fun(int a[],int n,int r)
-{
-    
-    int left=0;
-    int right=n-1;
-    int mid=(right-left)/2;
-    while (left<=right)
-    {
-        if(a[mid]==r) 
-        {
-            return mid;
-        }    
-        else if(a[mid]>r)
-        {
-            right = mid-1;
-        }
-        else{
-            left=mid+1;
-        }
-    }
-    return -1;
-    
-}
-int main()
-{
-    int a[]={10,5,2,3,6};
-    int n=sizeof(a)/sizeof(0);
-    int r=5;
-    cout<<fun(a,n,r);
-    return 0;
-}
-
 // #include<iostream>
 // using namespace std;
-// int fun(string s,int i=0)
+// int fun(int a[],int n,int r)
 // {
-//     if(s.length()==i)
+    
+//     int left=0;
+//     int right=n-1;
+//     int mid=(right-left)/2;
+//     while (left<=right)
 //     {
-//         cout<<s<<" ";
+//         if(a[mid]==r) 
+//         {
+//             return mid;
+//         }    
+//         else if(a[mid]>r)
+//         {
+//             right = mid-1;
+//         }
+//         else{
+//             left=mid+1;
+//         }
 //     }
-//     for(int j=i;j<s.length();j++)
-//     {
-//         swap(s[i],s[j]);
-//         fun(s,i+1);
-//         swap(s[j],s[i]);
-//     }
-
+//     return -1;
+    
 // }
 // int main()
 // {
-//     string a="ABC";
-//     fun(a);
+//     int a[]={10,5,2,3,6};
+//     int n=sizeof(a)/sizeof(0);
+//     int r=5;
+//     cout<<fun(a,n,r);
 //     return 0;
 // }
 
+#include<iostream>
+using namespace std;
+int fun(string s,int i=0)
+{
+    if(s.length()==i)
+    {
+        cout<<s<<" ";
+    }
+    for(int j=i;j<s.length();j++)
+    {
+        swap(s[i],s[j]);
+        fun(s,i+1);
+        swap(s[j],s[i]);
+    }
+
+}
+int main()
+{
+    string a="ABC";
+    fun(a);
+    return 0;
+}

@@ -58,18 +58,21 @@
 // }
 
 #include <iostream>
-#include <sstream>
+#include <sstream>  // for std::stringstream
 #include <string>
-using namespace std;
+
 int main() {
-    string a = "amit is good boy are the useful";
-    stringstream ss(a);
-    string word;
+    std::string a = "amit is good boy are the useful";
+    std::stringstream ss(a);
+    std::string word;
     int wordCount = 0;
-    while (ss >> word) 
-    {
-        
+
+    // Extract words using stringstream and count them
+    while (ss >> word) {
+        wordCount++;
     }
-    cout << "Number of words: " << wordCount << std::endl;
+
+    std::cout << "Number of words: " << wordCount << std::endl;
+
     return 0;
 }
